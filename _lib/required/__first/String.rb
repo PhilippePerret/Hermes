@@ -1,20 +1,6 @@
 # encoding: UTF-8
 require 'date'
 
-TAB  = '    '.freeze
-TAB2 = (TAB*2).freeze
-TAB3 = (TAB*3).freeze
-ISPACE  = ' '.freeze # espace insécable
-FLECHE  = '➵'
-RC = "
-".freeze
-RC2 = (RC*2).freeze
-RC3 = (RC*3).freeze
-
-REGULAR = 'regular'.freeze
-ACTIVE  = 'active'.freeze
-
-
 class String
 
   MOIS = {

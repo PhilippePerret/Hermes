@@ -1,5 +1,7 @@
 AUTOCOMPLETIONS = [
   'histoire',
+  'source',
+  'element'
 ]
 completion_proc = proc { |s| AUTOCOMPLETIONS.grep(/^#{Regexp.escape(s)}/) }
 

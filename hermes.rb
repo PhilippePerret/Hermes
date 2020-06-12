@@ -25,6 +25,8 @@ begin
     # On pourra les obtenir par 'option?(<long option>)'
     buffer = CLI::Options.desoptionnize(buffer).strip.nil_if_empty
 
+    break if buffer == 'exit' || buffer == 'x'
+
     # Commande NEXT
     if buffer == '_'
 
