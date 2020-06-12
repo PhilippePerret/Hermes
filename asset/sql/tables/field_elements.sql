@@ -5,7 +5,9 @@ DROP TABLE IF EXISTS `field_elements`;
 
 CREATE TABLE `field_elements` (
   id INT(11) AUTO_INCREMENT PRIMARY KEY,
-  type_id TINYINT NOT NULL
+  type_id TINYINT NOT NULL,
+  content TEXT NOT NULL,
+  source_id INT(11) NOT NULL
 );
 
 DROP TABLE IF EXISTS `types_element`;

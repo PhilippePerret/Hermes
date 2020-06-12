@@ -13,7 +13,7 @@ class << self
 
 def dispatch_command(command, init_command = nil)
   words = command.split(' ')
-  puts "words: #{words.inspect}"
+  # puts "words: #{words.inspect}"
   operation = words.shift
   case operation
   when 'try'
@@ -32,12 +32,12 @@ end #/CLI
 def displatch_command_create(words)
   choix = words.first || Q.select('Chose à créer') do |q|
     q.choices [
-      {name:'Source (film, roman, …)', value: :source},
-      {name:'Plan Fieldien', value: :pfa},
-      {name:'Élements divers', value: :elements}
+      {name:'Source (film, roman, …)', value: 'source'},
+      {name:'Plan Fieldien', value: 'pfa'},
+      {name:'Élements divers', value: 'elements'}
     ]
   end
-  choix = choix.to_sym
-  require './_lib/commands/create'
-  Hermes.send("create_#{choix}".to_sym)
+  require_folder("#{File.expand_path('./_lib/commands/create/xlib')}")
+  require_relative File.join(COMMANDS_FOLDER,'create',choix)
+  Hermes.create
 end #/ displatch_command_create
